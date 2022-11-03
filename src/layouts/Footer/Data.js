@@ -2,62 +2,62 @@ import { Icons } from '../../../assets'
 export const socialLinks = [
   {
     title: 'Twitter',
-    img: Icons.brands.twitter.src,
+    img: Icons.brands.twitter,
     url: 'https://twitter.com/',
   },
   {
     title: 'LinkedIn',
-    img: Icons.brands.linkedin.src,
+    img: Icons.brands.linkedin,
     url: 'https://www.linkedin.com/',
   },
   {
     title: 'Facebook',
-    img: Icons.brands.facebook.src,
+    img: Icons.brands.facebook,
     url: 'https://www.facebook.com/',
   },
   {
     title: 'Blogger',
-    img: Icons.brands.blogger.src,
+    img: Icons.brands.blogger,
     url: 'https://blogspot.com/',
   },
   {
     title: 'Github',
-    img: Icons.brands.github.src,
+    img: Icons.brands.github,
     url: 'https://github.com/',
   },
   {
     title: 'Twitch',
-    img: Icons.brands.twitch.src,
+    img: Icons.brands.twitch,
     url: 'https://twitch.com/',
   },
   {
     title: 'Dribble',
-    img: Icons.brands.dribble.src,
+    img: Icons.brands.dribble,
     url: 'https://dribble.com/',
   },
   {
     title: 'Tumblr',
-    img: Icons.brands.tumblr.src,
+    img: Icons.brands.tumblr,
     url: 'https://www.tumblr.com/',
   },
   {
     title: 'Medium',
-    img: Icons.brands.medium.src,
+    img: Icons.brands.medium,
     url: 'https://medium.com/',
   },
   {
     title: 'Instagram',
-    img: Icons.brands.instagram.src,
+    img: Icons.brands.instagram,
     url: 'https://www.instagram.com/',
   },
   {
     title: 'Youtube',
-    img: Icons.brands.youtube.src,
+    img: Icons.brands.youtube,
     url: 'https://www.youtube.com/',
   },
   // {
   //   title: 'Pinterest',
-  //   img: pinterest.src,
+  //   img: pinterest,
   //   url: 'https://in.pinterest.com/ostelloindia/',
   // },
 ]

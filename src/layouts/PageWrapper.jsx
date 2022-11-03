@@ -1,4 +1,3 @@
-import { Affix } from 'antd'
 import React from 'react'
 
 export default function PageWrapper({ children, header }) {

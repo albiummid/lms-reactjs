@@ -11,7 +11,8 @@ import { useDispatch } from 'react-redux'
 const NavHeader = ({
   className = '',
   type = 'client',
-  isAuth = typeof window !== 'undefined' && window.localStorage.getItem('ACCESS_TOKEN') !== null,
+  isAuth = typeof window !== 'undefined' &&
+    window.localStorage.getItem('ACCESS_TOKEN') !== null,
   isForm = false,
 }) => {
   const [isMobileNav, setIsMobileNav] = useState(false)
@@ -26,7 +27,7 @@ const NavHeader = ({
       >
         <Link href='/'>
           <img
-            src={LogoWithTitle.src}
+            src={LogoWithTitle}
             alt='logo'
             className='w-auto cursor-pointer hidden lg:block h-4 lg:h-6 xl:h-10 pr-6 xl:pr-0'
           />
@@ -132,7 +133,8 @@ export default NavHeader
 export const MobileNavBar = ({
   className = '',
   type = 'client',
-  isAuth = typeof window !== 'undefined' && window.localStorage.getItem('ACCESS_TOKEN') !== null,
+  isAuth = typeof window !== 'undefined' &&
+    window.localStorage.getItem('ACCESS_TOKEN') !== null,
   isForm = false,
   navState,
 }) => {
@@ -142,7 +144,7 @@ export const MobileNavBar = ({
       <div className='lg:hidden flex justify-center items-center space-x-8 py-5'>
         <Link href='/'>
           <img
-            src={MobileLogo.src}
+            src={MobileLogo}
             alt=''
             className='lg:hidden w-auto px-10 h-10'
           />
@@ -262,8 +264,10 @@ export const MobileNavBar = ({
                 <button
                   className='px-6 py-1 border-2  shadow-md rounded-lg border-primary'
                   onClick={() => {
-                    typeof window !== 'undefined' && window.localStorage.removeItem('ACCESS_TOKEN')
-                    typeof window !== 'undefined' && window.localStorage.removeItem('OWNER_ID')
+                    typeof window !== 'undefined' &&
+                      window.localStorage.removeItem('ACCESS_TOKEN')
+                    typeof window !== 'undefined' &&
+                      window.localStorage.removeItem('OWNER_ID')
                     typeof window !== 'undefined' && window.location.reload()
                   }}
                 >

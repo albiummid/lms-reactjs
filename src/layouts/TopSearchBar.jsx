@@ -73,7 +73,11 @@ export default function TopSearchBar() {
       <Affix className='bg-white '>
         <div className='flex items-center justify-center lg:justify-between space-x-2  mx-auto  bg-white lg:px-10 '>
           <Link href='/' className='hidden lg:block' passHref>
-            <img src={logo.src} className='hidden lg:block w-32 lg:w-40 cursor-pointer ' alt='' />
+            <img
+              src={logo}
+              className='hidden lg:block w-32 lg:w-40 cursor-pointer '
+              alt=''
+            />
           </Link>
           <div className=' flex  justify-between space-x-2 top-0 max-w-2xl bg-white  p-3 w-full '>
             {TopNavData.map((d, i) => (
@@ -114,10 +118,9 @@ import courseImage from '../../assets/images/courseImg.png'
 import videoImage from '../../assets/images/videoImg.png'
 
 export const Card = ({ currentValue }) => {
-
   const img =
     currentValue.img?.[0]?.url ||
-    (currentValue.type === 'course' ? courseImage.src : videoImage.src)
+    (currentValue.type === 'course' ? courseImage : videoImage)
   const router = useRouter()
   return (
     <div
@@ -126,7 +129,7 @@ export const Card = ({ currentValue }) => {
       key={currentValue.id}
       className='flex bg-white p-2 cursor-pointer'
     >
-      <img src={img.src} className='w-[100px] h-[80px]' alt={currentValue.name} />
+      <img src={img} className='w-[100px] h-[80px]' alt={currentValue.name} />
       <div className='ml-2'>
         <h4 className='text-lg text-light-black'>{currentValue.name}</h4>
         <div style={{ color: '#939393' }} className='text-base mb-2'>
@@ -166,19 +169,16 @@ const Tabs = ({ currentValue, onToggle, active, setClicked }) => {
   const { query } = router.query
   const [locationType, setLocationType] = useState('')
   const { userLocation, recentLocations } = useSelector(authSelector)
-  const { locationQuery, searchQuery, selectedInstituteName } = useSelector(selectSearch)
+  const { locationQuery, searchQuery, selectedInstituteName } =
+    useSelector(selectSearch)
   const [filteredItems, setFilteredItems] = useState([])
 
   useEffect(() => {
-    if (
-      !isEmpty(searchData) &&
-      (searchField?.length > 1) &&
-      active
-    ) {
+    if (!isEmpty(searchData) && searchField?.length > 1 && active) {
       const temp = searchData?.filter((item) => {
-          return item?.keywords
-            ?.toLowerCase()
-            .includes(searchField?.toLowerCase())
+        return item?.keywords
+          ?.toLowerCase()
+          .includes(searchField?.toLowerCase())
       })
       setFilteredItems(temp)
     }
@@ -198,20 +198,22 @@ const Tabs = ({ currentValue, onToggle, active, setClicked }) => {
   }, [filteredItems])
 
   useEffect(() => {
-    if(searchQuery?.length > 0 ){
-       dispatch(filterCourse())
+    if (searchQuery?.length > 0) {
+      dispatch(filterCourse())
     }
-    if(selectedInstituteName?.length > 0 ){
-          const filterByName = courses.filter((course) =>{ return course.institute?.name.toLowerCase().includes(selectedInstituteName.toLowerCase())
-          })
-          console.log(filterByName)
-          dispatch(setFilteredCourses(filterByName))
-      }
-      if(locationQuery.length > 0 ){
-           dispatch(filterInstitute())
-      }
-
-  },[selectedInstituteName, searchQuery, courses,locationQuery])
+    if (selectedInstituteName?.length > 0) {
+      const filterByName = courses.filter((course) => {
+        return course.institute?.name
+          .toLowerCase()
+          .includes(selectedInstituteName.toLowerCase())
+      })
+      console.log(filterByName)
+      dispatch(setFilteredCourses(filterByName))
+    }
+    if (locationQuery.length > 0) {
+      dispatch(filterInstitute())
+    }
+  }, [selectedInstituteName, searchQuery, courses, locationQuery])
 
   useEffect(() => {
     isEmpty(institutes) && dispatch(fetchInstitutes())
@@ -338,9 +340,7 @@ const Tabs = ({ currentValue, onToggle, active, setClicked }) => {
           setSearchShow(false)
           setSearchField(type === 'search' ? searchField : locationType)
           type === 'location'
-            ? dispatch(
-                setLocationQuery(locationType)
-                )
+            ? dispatch(setLocationQuery(locationType))
             : dispatch(
                 setFilteredCourses(
                   filteredItems.filter((item) => item.type === 'course')
@@ -423,7 +423,7 @@ const Tabs = ({ currentValue, onToggle, active, setClicked }) => {
             className='overflow-y-scroll z-10 max-h-[44vh]'
           >
             {' '}
-            {(recentLocations.length > 1) && locationShow && (
+            {recentLocations.length > 1 && locationShow && (
               <div className='divide-y-[.5px] space-y-5 divide-light-slate/10 font-sm text-gray bg-white'>
                 {recentLocations[0]?.formatted?.map((item, idx) => (
                   <>
@@ -432,27 +432,39 @@ const Tabs = ({ currentValue, onToggle, active, setClicked }) => {
                         <div
                           className='flex bg-white p-2 cursor-pointer'
                           onClick={(e) => {
-                            dispatch(setLocationQuery(item.formatted_address.split(',').splice(0,2).join(' ')))
-                            setLocationType(
-                              item.formatted_address.split(',').splice(0,2).join(' ')
+                            dispatch(
+                              setLocationQuery(
+                                item.formatted_address
+                                  .split(',')
+                                  .splice(0, 2)
+                                  .join(' ')
                               )
+                            )
+                            setLocationType(
+                              item.formatted_address
+                                .split(',')
+                                .splice(0, 2)
+                                .join(' ')
+                            )
 
-                      //       if(locationQuery?.length > 1){
-                      //         dispatch(setFilteredInstitutes([]))
-                      //         const query = locationQuery.toLowerCase()
-                      //         query.split(' ').map((data) => {
-                      //             const result = institutesData.filter((item) => {
-                      //                return item.keywords?.toLowerCase()
-                      //                 .includes(data)
-                      //             })
-                      //             console.log(result);
-                      //                 return result ? dispatch(setFilteredInstitutes(result)) : []
-                      //     })
-                      // }
+                            //       if(locationQuery?.length > 1){
+                            //         dispatch(setFilteredInstitutes([]))
+                            //         const query = locationQuery.toLowerCase()
+                            //         query.split(' ').map((data) => {
+                            //             const result = institutesData.filter((item) => {
+                            //                return item.keywords?.toLowerCase()
+                            //                 .includes(data)
+                            //             })
+                            //             console.log(result);
+                            //                 return result ? dispatch(setFilteredInstitutes(result)) : []
+                            //     })
+                            // }
                           }}
                         >
                           <p>
-                          {item.formatted_address.split(',').length >  3 ? item.formatted_address.split(',').slice(0, 3) : item.formatted_address}
+                            {item.formatted_address.split(',').length > 3
+                              ? item.formatted_address.split(',').slice(0, 3)
+                              : item.formatted_address}
                           </p>
                         </div>
                       )}
@@ -467,4 +479,3 @@ const Tabs = ({ currentValue, onToggle, active, setClicked }) => {
     </div>
   )
 }
-

@@ -1,21 +1,15 @@
 import { Affix } from 'antd'
-import { useRouter } from 'next/router'
 import React, { useState } from 'react'
-import { Icons, Images } from '../../assets'
-import { GiHamburgerMenu } from 'react-icons/gi'
+import { Images } from '../assets'
+
 import { HiOutlineUserGroup } from 'react-icons/hi'
-import {
-  AiOutlineFire,
-  AiOutlineMenu,
-  AiOutlineMenuUnfold,
-} from 'react-icons/ai'
+import { AiOutlineFire, AiOutlineMenuUnfold } from 'react-icons/ai'
 import { MdOutlineEditNote, MdOutlineQuiz } from 'react-icons/md'
-import Drawer from '../UI/Drawer'
-import PageWrapper from './PageWrapper'
+import Drawer from '../components/UI/Drawer'
+import { useNavigate } from 'react-router-dom'
 
 export default function CoursePageLayout({ children, header }) {
-  const router = useRouter()
-  const routes = router.pathname.split('/')
+  const navigate = useNavigate()
   const courseTitle = `Job Grade Frontend Engineering in React Ecosystem by Istiaq Hasan`
   const courseImage = Images.courses.nextJSCourse
   const [openDrawer, setOpenDrawer] = useState(false)
@@ -49,7 +43,7 @@ export default function CoursePageLayout({ children, header }) {
       <section className='hidden lg:grid grid-cols-12 md:px-10 px-4 md:gap-32 md:mx-auto '>
         <Affix offsetTop={88} className=' col-span-3 mt-6'>
           <div className='flex justify-center flex-col items space-y-4 center relative '>
-            <img src={courseImage.src} className=' mx-auto  ' alt='' />
+            <img src={courseImage} className=' mx-auto  ' alt='' />
             <div
               style={{
                 backdropFilter: 'blur(20px)',
@@ -64,7 +58,7 @@ export default function CoursePageLayout({ children, header }) {
             {SidebarLinks.map((item, key) => (
               <div
                 onClick={() => {
-                  router.push('/' + item.url)
+                  navigate('/' + item.url)
                 }}
                 className={` flex 
                 items-center 
@@ -122,13 +116,13 @@ export default function CoursePageLayout({ children, header }) {
             <div className=' '>
               <div className='flex justify-center flex-col items center '>
                 <h1 className=' '>{courseTitle}</h1>
-                <img src={courseImage.src} className=' mx-auto ' alt='' />
+                <img src={courseImage} className=' mx-auto ' alt='' />
               </div>
               <div className=' mt-4 '>
                 {SidebarLinks.map((item, key) => (
                   <div
                     onClick={() => {
-                      router.push('/' + item.url)
+                      navigate('/' + item.url)
                       setOpenDrawer(false)
                     }}
                     className=' flex items-center gap-4 active:opacity-80 rounded-md hover:shadow-3xl active:font-semibold text-lg p-2 duration-100 cursor-pointer'

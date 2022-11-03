@@ -9,7 +9,7 @@ import {
   AiOutlineTeam,
 } from 'react-icons/ai'
 import { BsAward } from 'react-icons/bs'
-import Icons from '../../../assets/icons'
+import Icons from '../../assets/icons'
 import { useNavigate, Link } from 'react-router-dom'
 const iconStyle = `flex items-center text-2xl cursor-pointer `
 const links = [
@@ -66,7 +66,7 @@ export default function Navbar() {
             >
               <div className='flex justify-between items-center'>
                 <Link to={'/'}>
-                  <img src={logo.src} alt='lms-logo' />
+                  <img src={logo} alt='lms-logo' />
                 </Link>
                 <AiOutlineClose
                   onClick={() => {
@@ -119,7 +119,7 @@ export default function Navbar() {
             className={`hidden lg:flex justify-between items-center  py-3 px-4 md:px-10`}
           >
             <Link to={'/'}>
-              <img src={logo.src} alt='lms-logo' />
+              <img src={logo} className='w-10 h-10' alt='lms-logo' />
             </Link>
 
             <nav className=''>

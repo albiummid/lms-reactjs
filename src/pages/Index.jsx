@@ -56,10 +56,12 @@ export default function Index() {
         <h1>Route List</h1>
         <div className=' space-y-2 mt-6 overflow-y-auto h-[50vh]'>
           {routeList?.map((item, key) => (
-            <Link key={key} to={item.url}>
-              <div className=' hover:shadow-fb bg-white cursor-pointer p-2 '>
-                {key + 1}. {item.title}
-              </div>
+            <Link
+              className=' hover:shadow-fb bg-white cursor-pointer p-2 block '
+              key={key}
+              to={item.url}
+            >
+              {key + 1}. {item.title}
             </Link>
           ))}
         </div>

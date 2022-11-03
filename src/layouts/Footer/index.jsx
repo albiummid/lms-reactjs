@@ -10,7 +10,7 @@ export default function Footer() {
       <div className='flex  flex-col md:flex-row justify-center space-y-10 sm:space-y-0 sm:space-x-[100px] mb-5 py-10'>
         <div className='md:w-9/12 '>
           <Image
-            src={logo.src}
+            src={logo}
             height={logo.height / 3}
             width={logo.width / 3}
             alt='lms-logo'

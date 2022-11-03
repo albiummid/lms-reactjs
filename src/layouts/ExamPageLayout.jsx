@@ -1,12 +1,29 @@
 import { Affix } from 'antd'
 import React from 'react'
 import { useState } from 'react'
-import RenderHTML from '../TextEditor/RenderHTML'
-import PageWrapper from './PageWrapper'
+import RenderHTML from '../components/TextEditor/RenderHTML'
+import PageWrapper from '../layouts/PageWrapper'
 import { AiOutlineUnorderedList } from 'react-icons/ai'
-import Button from '../UI/Button'
-import Drawer from '../UI/Drawer'
-import ExamCountdown from '../pages/Exams/ExamCountdown'
+import Button from '../components/UI/Button'
+import Drawer from '../components/UI/Drawer'
+import useCountdown from '../hooks/useCountdown'
+
+function ExamCountdown() {
+  const [days, hours, minutes, seconds] = useCountdown({
+    minutes: 10,
+  })
+
+  const [timeBetween, setTimeBetween] = useState(null)
+
+  return (
+    <div className=' text-red-400 font-bold'>
+      {days > 0 && <span> {days}day</span>}
+      {hours > 0 && <span>{hours} hour</span>}
+      <span>{minutes} : </span>
+      <span>{seconds}s </span>
+    </div>
+  )
+}
 
 export default function ExamPageLayout({
   children,
