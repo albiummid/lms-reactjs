@@ -45,12 +45,10 @@ const routeList = [
 ]
 export default function Index() {
   return (
-    <main className=' min-h-screen grid grid-cols-2 justify-center m-10 gap-4'>
+    <main className=' min-h-screen grid md:grid-cols-2 justify-center m-10 gap-4'>
       <div>
-        <h1>Welcome to LMS UI! </h1>
+        <h3>Welcome to LMS UI! </h3>
         <p className=''>This site under maintenance</p>
-
-        <Button variant={'red'}>Click Me</Button>
       </div>
       <div>
         <h1>Route List</h1>
