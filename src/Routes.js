@@ -18,7 +18,7 @@ export const AppRoutes = [
     page: <Assignments />,
     subRoutes: [
       {
-        path: 'details:assignmentId',
+        path: 'details/:assignmentId',
         page: <AssignmentDetails />,
       },
     ],

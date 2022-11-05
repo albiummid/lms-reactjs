@@ -66,7 +66,7 @@ export default function Navbar() {
             >
               <div className='flex justify-between items-center'>
                 <Link to={'/'}>
-                  <img src={logo} alt='lms-logo' />
+                  <img src={logo} className='w-10' alt='lms-logo' />
                 </Link>
                 <AiOutlineClose
                   onClick={() => {
