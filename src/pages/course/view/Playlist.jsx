@@ -19,7 +19,6 @@ export default function Playlist({ setVideo }) {
             setActiveModule(key)
             setActiveSection(null)
             setActiveVideo(null)
-            setVideo('')
           }}
           key={key}
           active={key === activeModule}
@@ -32,7 +31,6 @@ export default function Playlist({ setVideo }) {
                 onClick={() => {
                   setActiveSection(sKey)
                   setActiveVideo(null)
-                  setVideo('')
                 }}
                 active={sKey === activeSection}
                 key={sKey}

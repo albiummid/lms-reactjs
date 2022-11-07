@@ -1,24 +1,31 @@
 import { Affix } from 'antd'
 import React, { useState } from 'react'
 import { Images } from '../assets'
+import { FaMedal } from 'react-icons/fa'
 
 import { HiOutlineUserGroup } from 'react-icons/hi'
 import { AiOutlineFire, AiOutlineMenuUnfold } from 'react-icons/ai'
 import { MdOutlineEditNote, MdOutlineQuiz } from 'react-icons/md'
 import Drawer from '../components/UI/Drawer'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 export default function CoursePageLayout({ children, header }) {
   const navigate = useNavigate()
   const courseTitle = `Job Grade Frontend Engineering in React Ecosystem by Istiaq Hasan`
   const courseImage = Images.courses.nextJSCourse
   const [openDrawer, setOpenDrawer] = useState(false)
+  const { courseId } = useParams()
 
   const SidebarLinks = [
     {
       title: 'Community',
       url: 'community',
       icon: <HiOutlineUserGroup size={30} />,
+    },
+    {
+      title: 'Leaderboard',
+      url: `course/${courseId}/leader_board`,
+      icon: <FaMedal size={30} />,
     },
     {
       title: 'Assignments',

@@ -8,7 +8,7 @@ export default function PageWrapper({ children, header }) {
           <div className=' py-5  bg-web_wash'>
             {typeof header === 'string' ? (
               <h1
-                className=' text-gray-500 md:text-2xl
+                className=' text-gray-500 text-base md:text-2xl
            '
               >
                 {header}

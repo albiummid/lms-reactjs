@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Button from '../components/UI/Button'
 const routeList = [
-  { title: 'Course', url: 'course/view' },
+  { title: 'Course/:courseId', url: 'course/1/' },
+  { title: 'Leaderboard', url: 'course/1/leader_board' },
   {
     title: 'Assignments',
     url: '/assignments',

@@ -3,6 +3,7 @@ import AssignmentDetails from './pages/assignments/details/AssignmentDetails'
 import BugsPage from './pages/bugs'
 import BugReportsPage from './pages/bugs/reports'
 import CommunityPage from './pages/community'
+import LeaderBoard from './pages/course/leaderboard/leaderboard'
 import ArniamView from './pages/course/view/ArniamView'
 import CourseView from './pages/course/view/CourseView'
 import RegularView from './pages/course/view/RegularView'
@@ -68,16 +69,20 @@ export const AppRoutes = [
   },
   {
     id: 7,
-    route: '/course/view',
+    route: '/course/:courseId',
     page: <CourseView />,
     subRoutes: [
       {
-        path: 'arniam',
+        path: 'view/arniam',
         page: <ArniamView />,
       },
       {
-        path: 'regular',
+        path: 'view/regular',
         page: <RegularView />,
+      },
+      {
+        path: 'leader_board',
+        page: <LeaderBoard />,
       },
     ],
   },
