@@ -11,6 +11,7 @@ import pinterest from './brands/pinterest.svg'
 import blogger from './brands/blogger.svg'
 import instagram from './brands/instagram.svg'
 import logo from './logo.png'
+import play from './play.png'
 
 // Activity
 import addIcon from './activity/addIcon.png'
@@ -21,6 +22,7 @@ import bugIcon from './activity/bugIcon.png'
 import teamIcon from './team.png'
 const Icons = {
   logo,
+  play,
   brands: {
     facebook,
     github,

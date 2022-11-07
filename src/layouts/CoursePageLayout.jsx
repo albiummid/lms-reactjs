@@ -51,7 +51,7 @@ export default function CoursePageLayout({ children, header }) {
               }}
               className='absolute bottom-0 w-full flex  text-white'
             >
-              <h1 className='text-white p-4'>{courseTitle}</h1>
+              <h4 className='text-white p-4 '>{courseTitle}</h4>
             </div>
           </div>
           <div className=' mt-4 space-y-4 '>

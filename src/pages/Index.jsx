@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Button from '../components/UI/Button'
 const routeList = [
+  { title: 'Course', url: 'course/view' },
   {
     title: 'Assignments',
     url: '/assignments',

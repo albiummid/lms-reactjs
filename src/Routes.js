@@ -3,6 +3,9 @@ import AssignmentDetails from './pages/assignments/details/AssignmentDetails'
 import BugsPage from './pages/bugs'
 import BugReportsPage from './pages/bugs/reports'
 import CommunityPage from './pages/community'
+import ArniamView from './pages/course/view/ArniamView'
+import CourseView from './pages/course/view/CourseView'
+import RegularView from './pages/course/view/RegularView'
 import ExamPage from './pages/exams'
 import ExamDetailsPage from './pages/exams/[examId]'
 import Index from './pages/Index'
@@ -60,6 +63,21 @@ export const AppRoutes = [
       {
         path: ':tickets/:ticketId',
         page: <TicketThreadsPage />,
+      },
+    ],
+  },
+  {
+    id: 7,
+    route: '/course/view',
+    page: <CourseView />,
+    subRoutes: [
+      {
+        path: 'arniam',
+        page: <ArniamView />,
+      },
+      {
+        path: 'regular',
+        page: <RegularView />,
       },
     ],
   },

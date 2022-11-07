@@ -35,6 +35,33 @@ module.exports = {
         web_wash: '#F0F2F5',
       },
     },
+    keyframes: {
+      fade_in: {
+        '0%': { opacity: 0 },
+        '100%': { opacity: 1 },
+      },
+      fade_out: {
+        '0%': { opacity: 1 },
+
+        '100%': {
+          opacity: 0,
+        },
+      },
+      slide_up: {
+        '0%': { transform: 'translateY(100%)' },
+        '100%': { transform: 'translateY(0%)' },
+      },
+      slide_down: {
+        '0%': { transform: 'translateY(0%)' },
+        '100%': { transform: 'translateY(100%)' },
+      },
+    },
+    animation: {
+      fade_in: 'fade_in 1s ease-in',
+      fade_out: 'fade_out 1s ease-out',
+      slide_up: 'slide_up 1s ease-in-out',
+      slide_down: 'slide_down 1s ease-in-out',
+    },
   },
   backgroundImage: {},
   plugins: [],
