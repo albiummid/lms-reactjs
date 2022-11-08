@@ -14,7 +14,7 @@ export default function CourseCard({
   return (
     <div
       className={`p-5 rounded-lg shadow-fb bg-white flex flex-col ${
-        enrolled ? 'md:flex-row md:w-full' : 'w-[300px]'
+        enrolled ? 'md:flex-row md:w-full' : 'md:w-[300px]'
       } w-fit gap-6 `}
     >
       <div className=' flex items-center justify-center md:justify-start'>

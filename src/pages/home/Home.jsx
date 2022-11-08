@@ -39,7 +39,7 @@ export default function Home() {
   ]
   return (
     <PageWrapper header={'Home'}>
-      <div className='grid md:grid-cols-12 md:gap-20 gap-4'>
+      <div className='grid md:grid-cols-12 md:gap-20 '>
         <section className=' col-span-7 '>
           <h2 className=' text-base md:text-3xl my-5'>Enrolled Courses</h2>
           <div className='grid gap-4'>
@@ -50,7 +50,7 @@ export default function Home() {
         </section>
         <section className=' col-span-5 '>
           <h2 className=' text-base md:text-3xl my-5'>Other Courses</h2>
-          <div className='flex gap-4  flex-wrap'>
+          <div className='flex gap-4  flex-wrap justify-center '>
             {enrolledCourses.map((course, key) => {
               return <CourseCard key={key} {...course} enrolled={false} />
             })}
