@@ -50,7 +50,7 @@ export default function Home() {
         </section>
         <section className=' col-span-5 '>
           <h2 className=' text-base md:text-3xl my-5'>Other Courses</h2>
-          <div className='flex gap-4  flex-wrap justify-center '>
+          <div className='flex gap-4  flex-wrap justify-center md:justify-start '>
             {enrolledCourses.map((course, key) => {
               return <CourseCard key={key} {...course} enrolled={false} />
             })}
