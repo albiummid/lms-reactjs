@@ -24,6 +24,16 @@ const links = [
     icon: <AiOutlineAppstore className={iconStyle} />,
   },
   {
+    title: 'Notice Board',
+    url: '/notice-board',
+    icon: <AiOutlineAppstore className={iconStyle} />,
+  },
+  {
+    title: 'Notification',
+    url: '/notification',
+    icon: <AiOutlineAppstore className={iconStyle} />,
+  },
+  {
     title: 'Support',
     url: '/support',
     icon: <BsAward className={iconStyle} />,

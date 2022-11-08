@@ -32,18 +32,22 @@ export default function Collapse({
         onClick={() => {
           setOpen((prv) => !prv)
         }}
-        className={` flex justify-between items-center gap-2 px-4 py-2 my-2 rounded-md hover:bg-green-300 select-none cursor-pointer w-full ${
-          open ? 'bg-green-300' : 'bg-white'
+        className={` flex justify-between items-center gap-2 px-4 py-2 rounded-md hover:bg-green-300 select-none cursor-pointer w-full border ${
+          open ? 'bg-green-300 rounded-b-none ' : 'bg-white'
         }`}
       >
-        <p className=' truncate'>{heading}</p>{' '}
+        {typeof heading === 'string' ? (
+          <p className=' truncate'>{heading}</p>
+        ) : (
+          <>{heading}</>
+        )}
         <AiOutlinePlus
           className={` cursor-pointer duration-100 ${open ? 'rotate-45' : ''}`}
         />
       </div>
       {open && (
         <div
-          className={`rounded-md border border-l-2 border-green-400  border-t-0 border-r-0 border-b-0 px-2  duration-500`}
+          className={`rounded-md  rounded-t-none  duration-500 border-2 border-t-0 p-4 bg-white`}
         >
           {children}
         </div>

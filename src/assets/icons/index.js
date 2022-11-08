@@ -21,12 +21,14 @@ import watchIcon from './activity/watchIcon.png'
 import bugIcon from './activity/bugIcon.png'
 import teamIcon from './team.png'
 import trophy from './trophy.png'
+import notification from './notification.png'
 import gold_medal from './gold-medal.png'
 const Icons = {
   logo,
   play,
   gold_medal,
   trophy,
+  notification,
   brands: {
     facebook,
     github,

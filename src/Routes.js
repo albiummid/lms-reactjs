@@ -9,13 +9,26 @@ import CourseView from './pages/course/view/CourseView'
 import RegularView from './pages/course/view/RegularView'
 import ExamPage from './pages/exams'
 import ExamDetailsPage from './pages/exams/[examId]'
+import Home from './pages/home/Home'
 import Index from './pages/Index'
+import NoticePage from './pages/notice/NoticePage'
+import NotificationPage from './pages/notification/NotificationPage'
 import UserProfile from './pages/profile/UserProfile'
 import SupportPage from './pages/support/SupportPage'
 import TicketThreadsPage from './pages/support/tickets/TicketThreadsPage'
 
 export const AppRoutes = [
-  { id: 1, route: '/', page: <Index /> },
+  {
+    id: 1,
+    route: '/',
+    page: <Home />,
+    subRoutes: [
+      {
+        path: 'index',
+        page: <Index />,
+      },
+    ],
+  },
   {
     id: 2,
     route: '/assignments',
@@ -85,5 +98,17 @@ export const AppRoutes = [
         page: <LeaderBoard />,
       },
     ],
+  },
+  {
+    id: 8,
+    route: '/notification',
+    page: <NotificationPage />,
+    subRoutes: [],
+  },
+  {
+    id: 9,
+    route: '/notice-board',
+    page: <NoticePage />,
+    subRoutes: [],
   },
 ]

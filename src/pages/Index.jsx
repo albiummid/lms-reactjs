@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Button from '../components/UI/Button'
 const routeList = [
   { title: 'Course/:courseId', url: 'course/1/' },
   { title: 'Leaderboard', url: 'course/1/leader_board' },
